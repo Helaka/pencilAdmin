@@ -1,0 +1,45 @@
+<div class="modal-header">
+  <h5 class="modal-title">Locations Details</h5>
+  <button type="button" class="close" aria-label="Close" (click)="dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+  <div class="form-group">
+    <input type="text" [(ngModel)]="location.address" class="form-control" />
+  </div>
+
+  <br />
+
+  <div class="form-group">
+    <input type="text" [(ngModel)]="location.city" class="form-control" />
+  </div>
+  <br />
+  <div class="form-group">
+    <select class="form-control" [(ngModel)]="location.outletId">
+      <option *ngFor="let outlet of outlets" [value]="outlet.id">
+        {{ outlet.name }}
+      </option>
+    </select>
+  </div>
+  <br />
+  <div class="form-group">
+    <input type="text" [(ngModel)]="location.latitude" class="form-control" />
+  </div>
+  <br />
+  <div class="form-group">
+    <input type="text" [(ngModel)]="location.longitude" class="form-control" />
+  </div>
+
+  <!-- You can add more fields as per your data structure -->
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="dismiss()">
+    Close
+  </button>
+  <button type="button" class="btn btn-success" (click)="saveChanges()">
+    Save Changes
+  </button>
+</div>

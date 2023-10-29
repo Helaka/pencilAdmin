@@ -1,0 +1,46 @@
+<div class="modal-header">
+    <h5 class="modal-title">SKU Details</h5>
+    <button type="button" class="close" aria-label="Close" (click)="dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  
+  <div class="modal-body">
+    <div class="form-group">
+      <input type="text" [(ngModel)]="sku.sku_name" class="form-control" />
+    </div>
+  
+    <br />
+  
+    <div class="form-group">
+      <input type="text" [(ngModel)]="sku.skuCategory[0].sku_type" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+      <select class="form-control" [(ngModel)]="sku.locations.id">
+        <option *ngFor="let location of locations" [value]="location.id">
+          {{ location.name}} 
+        </option>
+      </select>
+    </div>
+    <br />
+    <div class="form-group">
+      <!-- <input type="text" [(ngModel)]="location.latitude" class="form-control" /> -->
+    </div>
+    <br />
+    <div class="form-group">
+      <!-- <input type="text" [(ngModel)]="location.longitude" class="form-control" /> -->
+    </div>
+  
+    <!-- You can add more fields as per your data structure -->
+  </div>
+  
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="dismiss()">
+      Close
+    </button>
+    <button type="button" class="btn btn-success" (click)="saveChanges()">
+      Save Changes
+    </button>
+  </div>
+  
