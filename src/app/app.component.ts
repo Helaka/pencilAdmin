@@ -7,5 +7,5 @@ import { AuthService } from './auth/auth.service';
   providers:[AuthService]
 })
 export class AppComponent {
-  title = 'argon-dashboard-angular';
+  title = 'Angular-Dashboard';
 }
