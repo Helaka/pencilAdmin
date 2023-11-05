@@ -13,7 +13,7 @@ import { throwError,Observable } from 'rxjs';
 export class AuthService {
 
   private token: any;
-  private loginUrl = environment.baseUrl + "login";
+  private loginUrl = environment.baseUrl + "/login";
   private apiUrl = environment.baseUrl;
   private accessToken: any;
 

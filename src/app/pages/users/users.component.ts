@@ -89,6 +89,7 @@ export class UsersComponent implements OnInit {
       (response) => {
         if (response.success) {
           this.toastr.success(response.message);
+          this.usersForm.reset();
         } else {
           this.toastr.error("please fill with correct informations");
         }
@@ -112,7 +113,7 @@ export class UsersComponent implements OnInit {
   }
 
   registerUser(usersData: any): Observable<any> {
-    const url = environment.baseUrl + "register";
+    const url = environment.baseUrl + "/register";
     return this.http.post(url, usersData);
   }
 }

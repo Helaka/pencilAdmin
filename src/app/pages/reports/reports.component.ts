@@ -17,7 +17,7 @@ export class ReportsComponent implements OnInit {
   }
 
   downloadReports(){
-    this.http.get( environment.baseUrl + "report", { responseType: 'blob' }).subscribe((csvBlob: Blob) => {
+    this.http.get( environment.baseUrl + "/report", { responseType: 'blob' }).subscribe((csvBlob: Blob) => {
     this.downloadCSV(csvBlob);
     });
   }

@@ -72,7 +72,7 @@ export class MapsComponent implements OnInit {
   }
 
   registerLocation(locationData: any): Observable<any> {
-    const url = environment.baseUrl + "locations/add";
+    const url = environment.baseUrl + "/locations/add";
     
     return this.http.post(url, locationData);
   }

@@ -126,6 +126,7 @@ export class UserProfileComponent implements OnInit {
             };
             if (firstResponse["message"]) {
               this.toastr.success(firstResponse["message"]);
+              this.skuForm.reset();
             } else {
               this.toastr.error("Something went wrong");
             }
@@ -134,6 +135,7 @@ export class UserProfileComponent implements OnInit {
         )
         .subscribe((secondResponse) => {
           if (secondResponse["success"]) {
+            this.skuForm.reset();
             this.toastr.success(secondResponse["message"]);
           } else {
             this.toastr.error("Something went wrong");
@@ -144,12 +146,12 @@ export class UserProfileComponent implements OnInit {
     }
   }
   registerSku(skuData: any): Observable<any> {
-    const url = environment.baseUrl + "sku/create";
+    const url = environment.baseUrl + "/sku/create";
     return this.http.post(url, skuData);
   }
 
   registerSubSku(skuSubData: any): Observable<any> {
-    const url = environment + "skuCategory/add"; 
+    const url = environment.baseUrl + "/skuCategory/add"; 
     return this.http.post(url, skuSubData);
   }
 }

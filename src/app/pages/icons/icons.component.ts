@@ -81,7 +81,7 @@ export class IconsComponent implements OnInit {
     }
 
     registerOutlet(data: any): Observable<any> {
-      const url =  environment.baseUrl + "outlets/register'";
+      const url =  environment.baseUrl + "/outlets/register";
       return this.http.post(url, data);
     }
 
