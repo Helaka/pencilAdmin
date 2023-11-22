@@ -48,7 +48,7 @@ export class UserProfileComponent implements OnInit {
     private formModule: FormsModule,
     private toastr: ToastrService
   ) {
-    this.loadLocations();
+    // this.loadLocations();
 
     this.loadSkus();
   }
@@ -68,16 +68,18 @@ export class UserProfileComponent implements OnInit {
       skusub: new FormControl("", [Validators.required]),
       newSKUNamemodel: new FormControl(""),
     });
+    this.loadLocations();
   }
 
   loadLocations(): void {
     this.outletService.getLocations().subscribe((response) => {
       response.forEach((location) => {
+
         this.locations.push({
           id: location.id,
           name: `${location.outlet.name}-${location.city}`,
+          outletId: location.outletId
         });
-        this.outletId = location.outletId;
       });
       // this.locations = response;
     });
@@ -102,6 +104,12 @@ export class UserProfileComponent implements OnInit {
       return;
     }
 
+    if(this.selectedLocation){
+      const selectLocationObj = this.locations.find(loc => loc.id == this.selectedLocation);
+      if(selectLocationObj){
+        this.outletId = selectLocationObj.outletId;
+      }
+    }
     if (this.isNewSKU) {
       this.skuData = {
         sku_name: this.newSKUName,
