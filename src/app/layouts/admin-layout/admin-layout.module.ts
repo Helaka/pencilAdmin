@@ -19,6 +19,8 @@ import { StoreVisitsComponent } from '../../pages/store-visits/store-visits.comp
 import { StallListsComponent } from '../../pages/stall-lists/stall-lists.component';
 import { UsersComponent } from '../../pages/users/users.component';
 import { UsersListComponent } from 'src/app/pages/users-list/users-list.component';
+import { CompetitorsComponent } from 'src/app/pages/competitors/competitors.component';
+import { CompetitorsListComponent } from 'src/app/pages/competitors-list/competitors-list.component';
 
 // import { ToastrModule } from 'ngx-toastr';
 
@@ -43,7 +45,9 @@ import { UsersListComponent } from 'src/app/pages/users-list/users-list.componen
     ReportsComponent,
     StoreVisitsComponent,
     StallListsComponent,
-    UsersListComponent
+    UsersListComponent,
+    CompetitorsComponent,
+    CompetitorsListComponent
  
   ]
 })

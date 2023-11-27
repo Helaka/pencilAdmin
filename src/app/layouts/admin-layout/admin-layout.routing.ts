@@ -12,6 +12,8 @@ import { LocationListsComponent } from "src/app/pages/location-lists/location-li
 import { SkuListComponent } from "src/app/pages/sku-list/sku-list.component";
 import { UsersComponent } from "src/app/pages/users/users.component";
 import { UsersListComponent } from "src/app/pages/users-list/users-list.component";
+import { CompetitorsComponent } from "src/app/pages/competitors/competitors.component";
+import { CompetitorsListComponent } from "src/app/pages/competitors-list/competitors-list.component";
 
 export const AdminLayoutRoutes: Routes = [
   // { path: 'dashboard',      component: DashboardComponent },
@@ -29,4 +31,6 @@ export const AdminLayoutRoutes: Routes = [
   { path: "reports", component: ReportsComponent },
   { path: "users", component: UsersComponent },
   { path: "store-visits", component: StoreVisitsComponent },
+  { path: "competitors", component: CompetitorsComponent },
+  { path: "competitors/list", component: CompetitorsListComponent },
 ];
