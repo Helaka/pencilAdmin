@@ -26,11 +26,8 @@ import { VisitDeleteModalComponent } from './modal/visit-delete-modal/visit-dele
 import { LocationDeleteModalComponent } from './modal/location-delete-modal/location-delete-modal.component';
 import { SkuDeleteModalComponent } from './modal/sku-delete-modal/sku-delete-modal.component';
 import { UserDeleteModalComponent } from './modal/user-delete-modal/user-delete-modal.component';
-
-
-
-
-
+import { CompetitorModalComponent } from './modal/competitor-modal/competitor-modal.component';
+import { CompetitorDeleteModalComponent } from './modal/competitor-delete-modal/competitor-delete-modal.component';
 
 @NgModule({
   imports: [
@@ -64,7 +61,9 @@ import { UserDeleteModalComponent } from './modal/user-delete-modal/user-delete-
     VisitDeleteModalComponent,
     LocationDeleteModalComponent,
     SkuDeleteModalComponent,
-    UserDeleteModalComponent
+    UserDeleteModalComponent,
+    CompetitorModalComponent,
+    CompetitorDeleteModalComponent
 
   ],
   providers:[AuthService],

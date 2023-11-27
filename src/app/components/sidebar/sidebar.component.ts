@@ -58,6 +58,21 @@ export const ROUTES: RouteInfo[] = [
       },
     ],
   },
+
+  {
+    path: "/competitors",
+    title: "Create Competitor",
+    icon: "ni ni-user-run text-purple",
+    class: "",
+    submenu: [
+      {
+        path: "/competitors/list",
+        title: "Competitors List",
+        icon: "ni ni-tag text-blue",
+        class: "",
+      },
+    ],
+  },
   // {
   //   path: "/sku-sub",
   //   title: "SKU Sub Category ",
