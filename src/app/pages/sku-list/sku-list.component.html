@@ -101,29 +101,38 @@
           <h3 class="mb-0">SKU Lists</h3>
         </div>
         <div class="card-body">
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th scope="col">Ref#</th>
-                <th scope="col">SKU Name</th>
-                <th scope="col">sku sub</th>
-                <th scope="col">outlet name</th>
-                <th scope="col">More</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let sku of skus">
-                <th scope="row">{{ sku.id }}</th>
-                <td>{{ sku.sku_name }}</td>
-                <td>{{sku.skuCategory[0].sku_type}}</td>
-                <td>{{ sku.outlets.name }}-{{ sku.locations.city }}</td>
-                <td>
-                  <button class="btn btn-primary" (click)="openSKUModal(sku)">Edit</button>
-                  <button class="btn btn-danger" (click)="openSKUDeleteModal(sku)">Delete</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-responsive">
+            <table class="table table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">Ref#</th>
+                  <th scope="col">SKU Name</th>
+                  <th scope="col">sku sub</th>
+                  <th scope="col">outlet name</th>
+                  <th scope="col">More</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let sku of skus">
+                  <th scope="row">{{ sku.id }}</th>
+                  <td>{{ sku.sku_name }}</td>
+                  <td>{{ sku.skuCategory[0].sku_type }}</td>
+                  <td>{{ sku.outlets.name }}-{{ sku.locations.city }}</td>
+                  <td>
+                    <button class="btn btn-primary" (click)="openSKUModal(sku)">
+                      Edit
+                    </button>
+                    <button
+                      class="btn btn-danger"
+                      (click)="openSKUDeleteModal(sku)"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

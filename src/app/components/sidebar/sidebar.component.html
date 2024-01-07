@@ -21,10 +21,9 @@
       <img
         src="./assets/img/brand/icon.png"
         class="navbar-brand-img"
-        style="height: 100px; width: 100px"
         alt="..."
-      />
-    </a>
+      /> </a
+    >
     <!-- User -->
     <ul class="nav align-items-center d-md-none">
       <!-- <li class="nav-item" ngbDropdown placement="bottom-right">
@@ -51,85 +50,58 @@
             </span>
           </div>
         </a>
-        <div class="dropdown-menu-arrow dropdown-menu-right" ngbDropdownMenu>
+        <div
+          class="dropdown-menu-arrow dropdown-menu-right"
+          ngbDropdownMenu
+          style="background-color: black"
+        >
           <div class="items-menu">
-            <li
-              *ngFor="let menuItem of menuItems; let i = index"
-              class="{{ menuItem.class }} nav-item"
-            >
-              <a
-                (click)="toggleSubMenu(i)"
-                routerLinkActive="active"
-                [routerLink]="[menuItem.path]"
-                class="nav-link"
-                id="link-word"
+            <ul class="navbar-nav">
+              <li
+                *ngFor="let menuItem of menuItems; let i = index"
+                class="{{ menuItem.class }} nav-item"
               >
-                <i class="ni {{ menuItem.icon }}"></i>
-                <span>{{ menuItem.title }}</span>
-                <i
-                  class="ni"
-                  [ngClass]="
-                    expandedMenuIndex === i ? 'ni-fat-remove' : 'ni-fat-add'
-                  "
-                ></i>
-              </a>
-              <ul
-                *ngIf="
-                  menuItem.submenu &&
-                  menuItem.submenu.length &&
-                  expandedMenuIndex === i
-                "
-                class="navbar-nav ml-3"
-              >
-                <li
-                  *ngFor="let subItem of menuItem.submenu"
-                  class="{{ subItem.class }} nav-item"
+                <a
+                  (click)="toggleSubMenu(i)"
+                  routerLinkActive="active"
+                  [routerLink]="[menuItem.path]"
+                  class="nav-link"
+                  id="link-word"
                 >
-                  <a
-                    routerLinkActive="active"
-                    [routerLink]="[subItem.path]"
-                    class="nav-link"
-                    id="link-word"
+                  <i class="ni {{ menuItem.icon }}"></i>
+                  <span>{{ menuItem.title }}</span>
+                  <i
+                    class="ni"
+                    [ngClass]="
+                      expandedMenuIndex === i ? 'ni-fat-remove' : 'ni-fat-add'
+                    "
+                  ></i>
+                </a>
+                <ul
+                  *ngIf="
+                    menuItem.submenu &&
+                    menuItem.submenu.length &&
+                    expandedMenuIndex === i
+                  "
+                  class="navbar-nav ml-3"
+                >
+                  <li
+                    *ngFor="let subItem of menuItem.submenu"
+                    class="{{ subItem.class }} nav-item"
                   >
-                    <i class="ni {{ subItem.icon }}"></i> {{ subItem.title }}
-                  </a>
-                </li>
-              </ul>
-
-              <!-- <a
-              routerLinkActive="active"
-              [routerLink]="['/user-profile']"
-              class="dropdown-item">
-              <i class="ni ni-settings-gear-65"></i>
-              <span>Settings</span>
-            </a> -->
-              <!-- <a
-              routerLinkActive="active"
-              [routerLink]="['/user-profile']"
-              class="dropdown-item">
-              <i class="ni ni-calendar-grid-58"></i>
-              <span>Activity</span>
-            </a> -->
-              <!-- <a
-              routerLinkActive="active"
-              [routerLink]="['/user-profile']"
-              class="dropdown-item">
-              <i class="ni ni-support-16"></i>
-              <span>Support</span>
-            </a> -->
-            </li>
-            <button
-              (click)="logout()"
-              style="
-                width:150px;
-                margin-left: 5px;
-                margin-right: 5px;
-                background-color: orange;
-              "
-              class="btn btn-warning"
-            >
-              Logout
-            </button>
+                    <a
+                      routerLinkActive="active"
+                      [routerLink]="[subItem.path]"
+                      class="nav-link"
+                      id="link-word"
+                    >
+                      <i class="ni {{ subItem.icon }}"></i> {{ subItem.title }}
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <button (click)="logout()" class="btn btn-logout">Logout</button>
           </div>
           <!-- <a
             (click)="logout()"
