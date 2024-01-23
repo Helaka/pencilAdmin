@@ -14,23 +14,24 @@ import { UsersComponent } from "src/app/pages/users/users.component";
 import { UsersListComponent } from "src/app/pages/users-list/users-list.component";
 import { CompetitorsComponent } from "src/app/pages/competitors/competitors.component";
 import { CompetitorsListComponent } from "src/app/pages/competitors-list/competitors-list.component";
+import { AuthGuard } from "src/app/auth.guard";
 
 export const AdminLayoutRoutes: Routes = [
   // { path: 'dashboard',      component: DashboardComponent },
-  { path: "sku", component: UserProfileComponent },
-  { path: "sku-sub", component: TablesComponent },
+  { path: "sku", component: UserProfileComponent, canActivate: [AuthGuard] },
+  { path: "sku-sub", component: TablesComponent, canActivate: [AuthGuard] },
   {
     path: "stall",
     component: IconsComponent,
   },
-  { path: "locations", component: MapsComponent },
-  { path: "stall/list", component: StallListsComponent },
-  { path: "location/list", component: LocationListsComponent },
-  { path: "user/list", component: UsersListComponent },
-  { path: "sku/list", component: SkuListComponent },
-  { path: "reports", component: ReportsComponent },
-  { path: "users", component: UsersComponent },
-  { path: "store-visits", component: StoreVisitsComponent },
-  { path: "competitors", component: CompetitorsComponent },
-  { path: "competitors/list", component: CompetitorsListComponent },
+  { path: "locations", component: MapsComponent ,canActivate: [AuthGuard]},
+  { path: "stall/list", component: StallListsComponent , canActivate: [AuthGuard] },
+  { path: "location/list", component: LocationListsComponent, canActivate: [AuthGuard] },
+  { path: "user/list", component: UsersListComponent, canActivate: [AuthGuard] },
+  { path: "sku/list", component: SkuListComponent , canActivate: [AuthGuard]},
+  { path: "reports", component: ReportsComponent , canActivate: [AuthGuard]},
+  { path: "users", component: UsersComponent, canActivate: [AuthGuard] },
+  { path: "store-visits", component: StoreVisitsComponent, canActivate: [AuthGuard] },
+  { path: "competitors", component: CompetitorsComponent, canActivate: [AuthGuard] },
+  { path: "competitors/list", component: CompetitorsListComponent, canActivate: [AuthGuard] },
 ];

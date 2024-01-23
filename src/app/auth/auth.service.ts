@@ -59,7 +59,7 @@ registerUser(userData): Observable<any> {
 
   logout() {
     this.token = null;
-    localStorage.removeItem('token');
+    localStorage.removeItem('access_token');
   }
 
   isAdmin() {
