@@ -20,10 +20,7 @@ export const AdminLayoutRoutes: Routes = [
   // { path: 'dashboard',      component: DashboardComponent },
   { path: "sku", component: UserProfileComponent, canActivate: [AuthGuard] },
   { path: "sku-sub", component: TablesComponent, canActivate: [AuthGuard] },
-  {
-    path: "stall",
-    component: IconsComponent,
-  },
+  { path: "stall", component: IconsComponent,canActivate: [AuthGuard] },
   { path: "locations", component: MapsComponent ,canActivate: [AuthGuard]},
   { path: "stall/list", component: StallListsComponent , canActivate: [AuthGuard] },
   { path: "location/list", component: LocationListsComponent, canActivate: [AuthGuard] },

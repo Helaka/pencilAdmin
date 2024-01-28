@@ -72,6 +72,7 @@ export class IconsComponent implements OnInit {
           }
         },
         (error) => {
+          console.log("error",error);
           this.toastr.error(error);
           // Handle error
         }
